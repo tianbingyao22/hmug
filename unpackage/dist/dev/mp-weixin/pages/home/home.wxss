@@ -26,7 +26,7 @@
 /* 文章场景相关 */
 .topSearch {
   width: 750rpx;
-  height: 70px;
+  height: 80px;
   background-color: #c00000;
   display: flex;
   justify-content: start;
@@ -35,12 +35,49 @@
 .topSearch .search_btn {
   width: 500rpx;
   height: 30px;
-  margin-top: 30px;
+  margin-top: 45px;
   margin-left: 20px;
   background-color: #fff;
   border-radius: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+swiper {
+  height: 330rpx;
+}
+swiper .swiper-item,
+swiper image {
+  width: 100%;
+  height: 100%;
+}
+.nav-list {
+  display: flex;
+  justify-content: space-around;
+  margin: 15px 0;
+}
+.nav-list .nav-img {
+  width: 128rpx;
+  height: 140rpx;
+}
+.floor-title {
+  height: 60rpx;
+  width: 100%;
+  display: flex;
+}
+.right-img-box {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.right-img-box image {
+  height: 190rpx;
+}
+.floor-img-box {
+  display: flex;
+  padding-left: 10rpx;
+}
+.floor-img-box .left-img {
+  height: 392rpx !important;
 }
 
