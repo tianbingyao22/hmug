@@ -30,13 +30,15 @@
         <view class="floor-img-box">
           <!-- 左侧大图片的盒子 -->
           <view class="left-img-box">
-            <image class="left-img" :src="item.product_list[0].image_src"
-              :style="{width:item.product_list[0].image_width+'rpx'}"></image>
+            <image class="left-img" @click="goGoodsList(item.product_list[0].navigator_url)"
+              :src="item.product_list[0].image_src""
+              :style=" {width:item.product_list[0].image_width+'rpx'}"></image>
           </view>
           <!-- 右侧 4 个小图片的盒子 -->
           <view class="right-img-box">
             <view class="right-img-item" v-for="(item2,i) in item.product_list" :key="i" v-if="i!==0">
-              <image :src="item2.image_src" :style="{width:item2.image_width+'rpx'}"></image>
+              <image @click="goGoodsList(item2.navigator_url)" :src="item2.image_src"
+                :style="{width:item2.image_width+'rpx'}"></image>
             </view>
           </view>
         </view>
@@ -50,7 +52,7 @@
     getBanners,
     getNavs,
     getFloors
-  } from "@/apis/home.js"
+  } from "@/apis/home.js";
   export default {
     data() {
       return {
@@ -84,12 +86,16 @@
           })
         }
       },
-
-    },
-    onLoad() {
-      this.loadBanners()
-      this.loadNavs()
-      this.loadFloors()
+      onLoad() {
+        this.loadBanners()
+        this.loadNavs()
+        this.loadFloors()
+      },
+      goGoodsList(url) {
+        uni.navigateTo({
+          url: '/subpkg/goods_list/goods_list?' + url.split('?')[1]
+        })
+      }
     }
   }
 </script>
